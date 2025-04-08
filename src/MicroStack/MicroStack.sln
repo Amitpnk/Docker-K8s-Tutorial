@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroStack.Client", "MicroStack.Client\MicroStack.Client.csproj", "{BD94D43A-4CA7-4136-8685-3FDD80D39F7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroStack.Api", "MicroStack.Api\MicroStack.Api.csproj", "{7F722368-C83A-46CC-8929-FA6DF36A1EB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BD94D43A-4CA7-4136-8685-3FDD80D39F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD94D43A-4CA7-4136-8685-3FDD80D39F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD94D43A-4CA7-4136-8685-3FDD80D39F7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F722368-C83A-46CC-8929-FA6DF36A1EB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F722368-C83A-46CC-8929-FA6DF36A1EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F722368-C83A-46CC-8929-FA6DF36A1EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F722368-C83A-46CC-8929-FA6DF36A1EB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
