@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  microstack.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8000:80"
+    depends_on:
+      - microstack.db
+
+  microstack.client:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8001:80"
+    networks:
+      - app-network
+  
+  microstack.db:
+    container_name: microteckdb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ${WEBAPP_STORAGE_HOME}/site:/data/db
+
+networks:
+  app-network:
+    driver: bridge

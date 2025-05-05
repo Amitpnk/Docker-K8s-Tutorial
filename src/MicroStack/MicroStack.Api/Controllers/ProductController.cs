@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MicroStack.Api.Data;
 using MicroStack.Api.Models;
+using MongoDB.Driver;
 
 namespace MicroStack.Api.Controllers
 {
@@ -8,20 +9,20 @@ namespace MicroStack.Api.Controllers
     [Route("[controller]")]
     public class ProductController : ControllerBase
     {
-    
-        
 
         private readonly ILogger<ProductController> _logger;
+        private readonly ProductContext _productContext;
 
-        public ProductController(ILogger<ProductController> logger)
+        public ProductController(ILogger<ProductController> logger, ProductContext productContext)
         {
             _logger = logger;
+            _productContext = productContext;
         }
 
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public async Task<IEnumerable<Product>> Get()
         {
-            return ProductContext.Products;
+            return await _productContext.Products.Find(p => true).ToListAsync();
         }
     }
 }
