@@ -83,3 +83,7 @@ Access the App
 Use the EXTERNAL-IP from above
 
 Access: http://<EXTERNAL-IP>/api/WeatherForecast/GetWeatherForecast
+
+
+kubectl get pods --all-namespaces
+kubectl logs weather-service-5895755b84-8dt8f
