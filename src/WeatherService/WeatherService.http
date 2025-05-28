@@ -1,6 +1,31 @@
-@WeatherService_HostAddress = http://localhost:5140
+@HostAddress = http://localhost:5000
 
-GET {{WeatherService_HostAddress}}/weatherforecast/
+### Weather Forecast (public)
+GET {{HostAddress}}/api/weatherforecast/
+Accept: application/json
+
+###
+
+### SecureController - Public endpoint
+GET {{HostAddress}}/api/secure/public
+Accept: application/json
+
+###
+
+### SecureController - Protected endpoint (requires authentication)
+GET {{HostAddress}}/api/secure/protected
+Accept: application/json
+
+###
+
+### SecureController - Admin only endpoint (requires 'admin' role)
+GET {{HostAddress}}/api/secure/admin
+Accept: application/json
+
+###
+
+### SecureController - Policy protected endpoint (requires 'AdminOnly' policy)
+GET {{HostAddress}}/api/secure/policy
 Accept: application/json
 
 ###
