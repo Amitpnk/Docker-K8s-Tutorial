@@ -6,17 +6,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 builder.Services.AddOpenApi();
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 app.MapOpenApi();
 app.MapScalarApiReference();
 
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseHealthChecks("/health");
 
 app.UseHttpsRedirection();
 
